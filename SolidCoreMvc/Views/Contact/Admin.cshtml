@@ -1,0 +1,32 @@
+﻿@model List<SolidCoreMvc.Models.ContactMessage>
+
+<h2>Submitted Messages</h2>
+
+@if (!Model.Any())
+{
+    <p>No messages have been submitted.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Sent At</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var msg in Model)
+            {
+                <tr>
+                    <td>@msg.Name</td>
+                    <td>@msg.Email</td>
+                    <td>@msg.Message</td>
+                    <td>@msg.SentAt</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
